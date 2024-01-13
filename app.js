@@ -11,7 +11,7 @@ app.get("/:password",(req,res)=>{
     const password = req.params.password
     if(password === process.env.PASSWORD){
         const data = require("./data")
-        res.send(JSON.stringify(data))
+        res.send(data)
     }else{
         res.send([])
     }
