@@ -7,7 +7,8 @@ app.use(express.json())
 app.get("/:password",(req,res)=>{
     const password = req.params.password
     if(password === "1234"){
-        res.send(require("./data"))
+        const data = require("./data")
+        res.send(JSON.stringify(data))
     }else{
         res.send([])
     }
