@@ -6,6 +6,7 @@ const app = express()
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(cors())
+app.use(`/${process.env.PASSWORD}/phrases`,require("./router"))
 
 app.get("/:password",(req,res)=>{
     const password = req.params.password
